@@ -1,3 +1,5 @@
+import StatusBadge from "./StatusBadge";
+
 type Student = {
   id: number;
   name: string;
@@ -29,7 +31,7 @@ function StudentTable({ students }: StudentTableProps) {
             </thead>
             <tbody className="divide-y divide-gray-200">
               {students.map((student) => {
-                let isLow = student.attendance < 75;
+
                 return (
                   <tr
                     key={student.id}
@@ -44,11 +46,7 @@ function StudentTable({ students }: StudentTableProps) {
                     </td>
 
                     <td className="px-6 py-4">
-                      <span
-                        className={`inline-flex px-3 py-1 text-xs font-medium rounded-full ${isLow ? "bg-red-100 text-red-700" : "bg-green-100 text-green-700"}`}
-                      >
-                        {isLow ? "Low" : "Good"}
-                      </span>
+                      <StatusBadge attendance={student.attendance} />
                     </td>
                   </tr>
                 );

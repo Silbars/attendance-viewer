@@ -1,3 +1,4 @@
+import FilterButtons from "./components/FilterButtons";
 import Header from "./components/Header"
 import PageContainer from "./components/PageContainer";
 import StudentTable from "./components/StudentTable";
@@ -13,6 +14,7 @@ function App() {
     return(
         <PageContainer>
             <Header/>
+            <FilterButtons/>
             <StudentTable students={students}/>
         </PageContainer>
         
