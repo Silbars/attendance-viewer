@@ -1,0 +1,60 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Arjun",
+      "email": "arjun@xyz.com",
+      "presentToday": false,
+      "attendance": 92
+    },
+    {
+      "id": 2,
+      "name": "Meera",
+      "email": "meera@xyz.com",
+      "presentToday": true,
+      "attendance": 89
+    },
+    {
+      "id": 3,
+      "name": "Ravi",
+      "email": "ravi@xyz.com",
+      "presentToday": true,
+      "attendance": 73
+    },
+    {
+      "id": 4,
+      "name": "Sneha",
+      "email": "sneha@xyz.com",
+      "presentToday": false,
+      "attendance": 75
+    },
+    {
+      "id": 5,
+      "name": "Karan",
+      "email": "karan@xyz.com",
+      "presentToday": true,
+      "attendance": 81
+    },
+    {
+      "id": 6,
+      "name": "Ananya",
+      "email": "ananya@xyz.com",
+      "presentToday": false,
+      "attendance": 67
+    },
+    {
+      "id": 7,
+      "name": "Vikram",
+      "email": "vikram@xyz.com",
+      "presentToday": true,
+      "attendance": 95
+    },
+    {
+      "id": 8,
+      "name": "Priya",
+      "email": "priya@xyz.com",
+      "presentToday": false,
+      "attendance": 58
+    }
+  ]
+}

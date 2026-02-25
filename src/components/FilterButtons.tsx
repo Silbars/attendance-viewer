@@ -1,9 +1,11 @@
-import { useState } from "react";
+export type FilterType = "all" | "present" | "absent";
 
-type FilterType = "all" | "present" | "absent";
+type FilterButtonsProps = {
+  activeFilter: FilterType;
+  onFilterChange: (filter: FilterType) => void;
+};
 
-function FilterButtons() {
-  const [activeFilter, setActiveFilter] = useState<FilterType>("all");
+function FilterButtons({ activeFilter, onFilterChange }: FilterButtonsProps) {
 
   function getButtonClass(filter: FilterType) {
     const base = "px-4 py-2 text-sm font-medium rounded-md transition duration-150";
@@ -17,7 +19,7 @@ function FilterButtons() {
     <div className="flex gap-2">
       <button
         type="button"
-        onClick={() => setActiveFilter("all")}
+        onClick={() => onFilterChange("all")}
         className={getButtonClass("all")}
       >
         All
@@ -25,7 +27,7 @@ function FilterButtons() {
 
       <button
         type="button"
-        onClick={() => setActiveFilter("present")}
+        onClick={() => onFilterChange("present")}
         className={getButtonClass("present")}
       >
         Present
@@ -33,7 +35,7 @@ function FilterButtons() {
 
       <button
         type="button"
-        onClick={() => setActiveFilter("absent")}
+        onClick={() => onFilterChange("absent")}
         className={getButtonClass("absent")}
       >
         Absent

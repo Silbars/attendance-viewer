@@ -1,8 +1,10 @@
 import StatusBadge from "./StatusBadge";
 
-type Student = {
+export type Student = {
   id: number;
   name: string;
+  email: string;
+  presentToday: boolean;
   attendance: number;
 };
 
@@ -19,7 +21,13 @@ function StudentTable({ students }: StudentTableProps) {
             <thead className="bg-slate-100">
               <tr>
                 <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600">
+                  #
+                </th>
+                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600">
                   Name
+                </th>
+                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600">
+                  Email
                 </th>
                 <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600">
                   Attendance %
@@ -37,8 +45,17 @@ function StudentTable({ students }: StudentTableProps) {
                     key={student.id}
                     className="hover:bg-slate-50 text-center transition duration-150 cursor-pointer"
                   >
+
+                    <td className="">
+                      {student.id}
+                    </td>
+
                     <td className="px-6 py-4 font-medium text-gray-900">
                       {student.name}
+                    </td>
+
+                    <td>
+                      {student.email}
                     </td>
 
                     <td className="px-6 py-4 text-gray-700">
@@ -46,7 +63,7 @@ function StudentTable({ students }: StudentTableProps) {
                     </td>
 
                     <td className="px-6 py-4">
-                      <StatusBadge attendance={student.attendance} />
+                      <StatusBadge presentToday={student.presentToday} />
                     </td>
                   </tr>
                 );
