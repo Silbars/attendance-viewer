@@ -6,10 +6,12 @@ import Header from "./components/Header"
 import PageContainer from "./components/PageContainer";
 import StudentTable from "./components/StudentTable";
 import StudentStats from "./components/StudentsStats";
+import Sort from "./components/Sort";
 
 function App() {
     const [activeFilter, setActiveFilter] = useState<FilterType>("all");
     const [students, setStudents] = useState<Student[]>([]);
+    const [show75, setShow75] = useState(false); 
 
     useEffect(() => {
         fetch(new URL("./api/students.json", import.meta.url).href)
@@ -26,8 +28,8 @@ function App() {
     }, []);
 
     const allStuds = students.length;
-    let presentStuds = students.filter(student => student.presentToday === true).length;
-    let absentStuds = allStuds - presentStuds;
+    const presentStuds = students.filter(student => student.presentToday === true).length;
+    const absentStuds = allStuds - presentStuds;
 
     const filteredStudents = students.filter((student) => {
         if (activeFilter === "all") {
@@ -41,14 +43,24 @@ function App() {
         return !student.presentToday;
     });
 
+    const below75Students = filteredStudents.filter(student => {
+        if (show75) {
+            return student.attendance < 75;
+        }
+        return true;
+    });
+
     return(
         <PageContainer>
             <div className="mb-8 pb-4 border-b border-slate-800 flex justify-between">
             <Header/> 
             <StudentStats all={allStuds} present={presentStuds} absent={absentStuds}/>
             </div>
-            <FilterButtons activeFilter={activeFilter} onFilterChange={setActiveFilter} />
-            <StudentTable students={filteredStudents}/>
+            <div className="flex justify-between">
+                <FilterButtons activeFilter={activeFilter} onFilterChange={setActiveFilter} />
+                <Sort isActive={show75} onToggle={() => setShow75((prev) => !prev)} />
+            </div>
+            <StudentTable students={below75Students}/>
         </PageContainer>
         
     )
