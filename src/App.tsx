@@ -43,7 +43,7 @@ function App() {
 
     return(
         <PageContainer>
-            <div className="mb-8 pb-4 border-b border-gray-200 flex justify-between">
+            <div className="mb-8 pb-4 border-b border-slate-800 flex justify-between">
             <Header/> 
             <StudentStats all={allStuds} present={presentStuds} absent={absentStuds}/>
             </div>

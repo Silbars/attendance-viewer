@@ -15,42 +15,42 @@ type StudentTableProps = {
 function StudentTable({ students }: StudentTableProps) {
   return (
     <>
-      <div className="table-wrapper w-full bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mt-6">
+      <div className="table-wrapper w-full bg-slate-900 rounded-xl shadow-sm border border-slate-800 overflow-hidden mt-6">
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm border-collapse">
-            <thead className="bg-slate-100">
+            <thead className="bg-slate-800">
               <tr>
-                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-slate-300">
                   #
                 </th>
-                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-slate-300">
                   Name
                 </th>
-                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-slate-300">
                   Email
                 </th>
-                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-slate-300">
                   Attendance %
                 </th>
-                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-gray-600">
+                <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-slate-300">
                   Status
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-slate-800">
               {students.map((student) => {
 
                 return (
                   <tr
                     key={student.id}
-                    className="hover:bg-slate-50 text-center transition duration-150 cursor-pointer"
+                    className="hover:bg-gray-700 text-center transition duration-150 cursor-pointer text-slate-200"
                   >
 
                     <td className="">
                       {student.id}
                     </td>
 
-                    <td className="px-6 py-4 font-medium text-gray-900">
+                    <td className="px-6 py-4 font-medium text-slate-100">
                       {student.name}
                     </td>
 
@@ -58,7 +58,7 @@ function StudentTable({ students }: StudentTableProps) {
                       {student.email}
                     </td>
 
-                    <td className="px-6 py-4 text-gray-700">
+                    <td className="px-6 py-4 text-slate-300">
                       {student.attendance}%
                     </td>
 
