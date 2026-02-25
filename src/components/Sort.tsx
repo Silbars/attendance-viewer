@@ -1,29 +1,22 @@
+export type SortType = "none" | "ascending" | "descending"
+
 type SortProps = {
-    isActive: boolean;
-    onToggle: () => void;
+    sortType: SortType;
+    onSort: (sortType: SortType) => void;
 }
 
-function Sort({ isActive, onToggle }: SortProps) {
-    function getClassName(isActive2: boolean) {
-        const base = "px-4 py-2 text-sm font-medium rounded-md border transition duration-150";
-        const active = "bg-indigo-500 border-indigo-500 text-white";
-        const inactive = "bg-slate-900 border-slate-700 text-slate-200 hover:bg-slate-800";
-
-        return `${base} ${isActive2 ? active : inactive}`;
-    }
-
+function Sort({ sortType, onSort }: SortProps) {
     return (
-        <div className="flex gap-2">
-            <button
-                type="button"
-                className={getClassName(isActive)}
-                onClick={onToggle}
-            >
-                Show &lt;75%
-            </button>
-        </div>
+        <select
+            value={sortType}
+            onChange={(e) => onSort(e.target.value as SortType)}
+            className="px-3 py-2 rounded-md border border-slate-700 bg-slate-900 text-slate-200"
+        >
+            <option value="none">None</option>
+            <option value="ascending">Ascending</option>
+            <option value="descending">Descending</option>
+        </select>
     )
-    
 }
 
 export default Sort

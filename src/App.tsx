@@ -2,16 +2,19 @@ import { useEffect, useState } from "react";
 import FilterButtons from "./components/FilterButtons";
 import type { FilterType } from "./components/FilterButtons";
 import type { Student } from "./components/StudentTable"
+import type { SortType } from "./components/Sort";
 import Header from "./components/Header"
 import PageContainer from "./components/PageContainer";
 import StudentTable from "./components/StudentTable";
 import StudentStats from "./components/StudentsStats";
+import BelowAttendance from "./components/BelowAttendance";
 import Sort from "./components/Sort";
 
 function App() {
     const [activeFilter, setActiveFilter] = useState<FilterType>("all");
     const [students, setStudents] = useState<Student[]>([]);
     const [show75, setShow75] = useState(false); 
+    const [sortType, setSortType] = useState<SortType>("none")
 
     useEffect(() => {
         fetch(new URL("./api/students.json", import.meta.url).href)
@@ -48,6 +51,18 @@ function App() {
             return student.attendance < 75;
         }
         return true;
+    }); 
+
+    const sortedStudents = [...below75Students].sort((a, b) => {
+        if (sortType === "ascending") {
+            return a.attendance - b.attendance;
+        }
+
+        if (sortType === "descending") {
+            return b.attendance - a.attendance;
+        }
+
+        return 0;
     });
 
     return(
@@ -58,9 +73,12 @@ function App() {
             </div>
             <div className="flex justify-between">
                 <FilterButtons activeFilter={activeFilter} onFilterChange={setActiveFilter} />
-                <Sort isActive={show75} onToggle={() => setShow75((prev) => !prev)} />
+                <div className="flex gap-2">
+                    <BelowAttendance isActive={show75} onToggle={() => setShow75((prev) => !prev)} />
+                    <Sort sortType={sortType} onSort={setSortType} />
+                </div>
             </div>
-            <StudentTable students={below75Students}/>
+            <StudentTable students={sortedStudents}/>
         </PageContainer>
         
     )
