@@ -1,12 +1,10 @@
-import ReactDOM from 'react-dom/client'
+import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 
-const root = document.getElementById('root')
+const root = document.getElementById("root");
 
-if(!root) {
-    throw new Error('root is inaccessible')
+if (!root) {
+  throw new Error("root is inaccessible");
 }
 
-ReactDOM.createRoot(root).render(
-    <App/>
-)
+ReactDOM.createRoot(root).render(<App />);

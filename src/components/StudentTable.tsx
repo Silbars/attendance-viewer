@@ -14,7 +14,11 @@ type StudentTableProps = {
   onSelect: (id: number) => void;
 };
 
-function StudentTable({ students, selectedStudentId, onSelect }: StudentTableProps) {
+function StudentTable({
+  students,
+  selectedStudentId,
+  onSelect,
+}: StudentTableProps) {
   return (
     <>
       <div className="table-wrapper w-full bg-slate-900 rounded-xl shadow-sm border border-slate-800 overflow-hidden mt-6">
@@ -41,29 +45,23 @@ function StudentTable({ students, selectedStudentId, onSelect }: StudentTablePro
             </thead>
             <tbody className="divide-y divide-slate-800">
               {students.map((student) => {
-
                 return (
-                    <tr
-                      key={student.id}
-                      onClick={() => onSelect(student.id)}
-                      className={`text-center transition duration-150 cursor-pointer text-slate-200 ${
-                        student.id === selectedStudentId
-                          ? "bg-gray-800 border-2 border-indigo-500"
-                          : "hover:bg-gray-700 hover:border-2 hover:border-gray-700"
-                      }`}
-                    >
-
-                    <td className="">
-                      {student.id}
-                    </td>
+                  <tr
+                    key={student.id}
+                    onClick={() => onSelect(student.id)}
+                    className={`text-center transition duration-150 cursor-pointer text-slate-200 ${
+                      student.id === selectedStudentId
+                        ? "bg-gray-800 border-2 border-indigo-500"
+                        : "hover:bg-gray-700 hover:border-2 hover:border-gray-700"
+                    }`}
+                  >
+                    <td className="">{student.id}</td>
 
                     <td className="px-6 py-4 font-medium text-slate-100">
                       {student.name}
                     </td>
 
-                    <td>
-                      {student.email}
-                    </td>
+                    <td>{student.email}</td>
 
                     <td className="px-6 py-4 text-slate-300">
                       {student.attendance}%
