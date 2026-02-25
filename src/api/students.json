@@ -1,60 +1,24 @@
 {
   "students": [
-    {
-      "id": 1,
-      "name": "Arjun",
-      "email": "arjun@xyz.com",
-      "presentToday": false,
-      "attendance": 92
-    },
-    {
-      "id": 2,
-      "name": "Meera",
-      "email": "meera@xyz.com",
-      "presentToday": true,
-      "attendance": 89
-    },
-    {
-      "id": 3,
-      "name": "Ravi",
-      "email": "ravi@xyz.com",
-      "presentToday": true,
-      "attendance": 73
-    },
-    {
-      "id": 4,
-      "name": "Sneha",
-      "email": "sneha@xyz.com",
-      "presentToday": false,
-      "attendance": 75
-    },
-    {
-      "id": 5,
-      "name": "Karan",
-      "email": "karan@xyz.com",
-      "presentToday": true,
-      "attendance": 81
-    },
-    {
-      "id": 6,
-      "name": "Ananya",
-      "email": "ananya@xyz.com",
-      "presentToday": false,
-      "attendance": 67
-    },
-    {
-      "id": 7,
-      "name": "Vikram",
-      "email": "vikram@xyz.com",
-      "presentToday": true,
-      "attendance": 95
-    },
-    {
-      "id": 8,
-      "name": "Priya",
-      "email": "priya@xyz.com",
-      "presentToday": false,
-      "attendance": 58
-    }
+    { "id": 1, "name": "Arjun", "email": "arjun@xyz.com", "presentToday": false, "attendance": 92 },
+    { "id": 2, "name": "Meera", "email": "meera@xyz.com", "presentToday": true, "attendance": 89 },
+    { "id": 3, "name": "Ravi", "email": "ravi@xyz.com", "presentToday": true, "attendance": 73 },
+    { "id": 4, "name": "Sneha", "email": "sneha@xyz.com", "presentToday": false, "attendance": 75 },
+    { "id": 5, "name": "Karan", "email": "karan@xyz.com", "presentToday": true, "attendance": 81 },
+    { "id": 6, "name": "Ananya", "email": "ananya@xyz.com", "presentToday": false, "attendance": 67 },
+    { "id": 7, "name": "Vikram", "email": "vikram@xyz.com", "presentToday": true, "attendance": 95 },
+    { "id": 8, "name": "Priya", "email": "priya@xyz.com", "presentToday": false, "attendance": 58 },
+    { "id": 9, "name": "Rahul", "email": "rahul@xyz.com", "presentToday": true, "attendance": 88 },
+    { "id": 10, "name": "Divya", "email": "divya@xyz.com", "presentToday": true, "attendance": 91 },
+    { "id": 11, "name": "Amit", "email": "amit@xyz.com", "presentToday": false, "attendance": 69 },
+    { "id": 12, "name": "Neha", "email": "neha@xyz.com", "presentToday": true, "attendance": 84 },
+    { "id": 13, "name": "Rohan", "email": "rohan@xyz.com", "presentToday": false, "attendance": 72 },
+    { "id": 14, "name": "Isha", "email": "isha@xyz.com", "presentToday": true, "attendance": 93 },
+    { "id": 15, "name": "Manish", "email": "manish@xyz.com", "presentToday": false, "attendance": 61 },
+    { "id": 16, "name": "Kavya", "email": "kavya@xyz.com", "presentToday": true, "attendance": 86 },
+    { "id": 17, "name": "Siddharth", "email": "siddharth@xyz.com", "presentToday": true, "attendance": 77 },
+    { "id": 18, "name": "Pooja", "email": "pooja@xyz.com", "presentToday": false, "attendance": 74 },
+    { "id": 19, "name": "Nikhil", "email": "nikhil@xyz.com", "presentToday": true, "attendance": 90 },
+    { "id": 20, "name": "Tanvi", "email": "tanvi@xyz.com", "presentToday": false, "attendance": 65 }
   ]
 }
