@@ -34,6 +34,12 @@ function App() {
     const presentStuds = students.filter(student => student.presentToday === true).length;
     const absentStuds = allStuds - presentStuds;
 
+    const [selectedStudentId, setSelectedStudentId] = useState<number | null>(null);
+
+    function handleSelect(id: number) {
+        setSelectedStudentId((prev) => (prev === id ? null : id));
+    }
+
     const filteredStudents = students.filter((student) => {
         if (activeFilter === "all") {
             return true;
@@ -78,7 +84,11 @@ function App() {
                     <Sort sortType={sortType} onSort={setSortType} />
                 </div>
             </div>
-            <StudentTable students={sortedStudents}/>
+            <StudentTable
+                students={sortedStudents}
+                selectedStudentId={selectedStudentId}
+                onSelect={handleSelect}
+            />
         </PageContainer>
         
     )

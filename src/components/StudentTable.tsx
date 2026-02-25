@@ -10,9 +10,11 @@ export type Student = {
 
 type StudentTableProps = {
   students: Student[];
+  selectedStudentId: number | null;
+  onSelect: (id: number) => void;
 };
 
-function StudentTable({ students }: StudentTableProps) {
+function StudentTable({ students, selectedStudentId, onSelect }: StudentTableProps) {
   return (
     <>
       <div className="table-wrapper w-full bg-slate-900 rounded-xl shadow-sm border border-slate-800 overflow-hidden mt-6">
@@ -41,10 +43,15 @@ function StudentTable({ students }: StudentTableProps) {
               {students.map((student) => {
 
                 return (
-                  <tr
-                    key={student.id}
-                    className="hover:bg-gray-700 text-center transition duration-150 cursor-pointer text-slate-200"
-                  >
+                    <tr
+                      key={student.id}
+                      onClick={() => onSelect(student.id)}
+                      className={`text-center transition duration-150 cursor-pointer text-slate-200 ${
+                        student.id === selectedStudentId
+                          ? "bg-gray-800 border-2 border-indigo-500"
+                          : "hover:bg-gray-700 hover:border-2 hover:border-gray-700"
+                      }`}
+                    >
 
                     <td className="">
                       {student.id}
